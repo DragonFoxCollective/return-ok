@@ -41,6 +41,36 @@ macro_rules! some_or_return {
 }
 
 #[macro_export]
+macro_rules! some_or_return_ok {
+    ($value:expr) => {
+        match $value {
+            Some(value) => value,
+            None => return Ok(Default::default()),
+        }
+    };
+}
+
+#[macro_export]
+macro_rules! some_or_return_err {
+    ($value:expr) => {
+        match $value {
+            Some(value) => value,
+            None => return Err(Default::default()),
+        }
+    };
+}
+
+#[macro_export]
+macro_rules! some_or_return_some {
+    ($value:expr) => {
+        match $value {
+            Some(value) => value,
+            None => return Some(Default::default()),
+        }
+    };
+}
+
+#[macro_export]
 macro_rules! some_or_continue {
     ($value:expr) => {
         match $value {
@@ -56,6 +86,36 @@ macro_rules! ok_or_return {
         match $value {
             Ok(value) => value,
             Err(_) => return Default::default(),
+        }
+    };
+}
+
+#[macro_export]
+macro_rules! ok_or_return_ok {
+    ($value:expr) => {
+        match $value {
+            Ok(value) => value,
+            Err(_) => return Ok(Default::default()),
+        }
+    };
+}
+
+#[macro_export]
+macro_rules! ok_or_return_err {
+    ($value:expr) => {
+        match $value {
+            Ok(value) => value,
+            Err(_) => return Err(Default::default()),
+        }
+    };
+}
+
+#[macro_export]
+macro_rules! ok_or_return_some {
+    ($value:expr) => {
+        match $value {
+            Ok(value) => value,
+            Err(_) => return Some(Default::default()),
         }
     };
 }
