@@ -1,6 +1,6 @@
 [package]
 name = "return-ok"
-version = "0.0.0"
+version = "0.1.0"
 edition = "2024"
 categories = ["rust-patterns"]
 description = "Macros for dealing with Options and Results where you shouldn't"
