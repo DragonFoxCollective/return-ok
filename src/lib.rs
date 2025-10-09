@@ -1,8 +1,8 @@
 #[macro_export]
 macro_rules! ok_some {
-    ($val: expr) => {
-        match $val {
-            Ok(Some(val)) => val,
+    ($value:expr) => {
+        match $value {
+            Ok(Some(value)) => value,
             Ok(None) => return Ok(None),
             Err(err) => return Err(err.into()),
         }
@@ -11,9 +11,9 @@ macro_rules! ok_some {
 
 #[macro_export]
 macro_rules! some_ok {
-    ($val: expr) => {
-        match $val {
-            Some(Ok(val)) => val,
+    ($value:expr) => {
+        match $value {
+            Some(Ok(value)) => value,
             Some(Err(err)) => return Some(Err(err.into())),
             None => return None,
         }
@@ -22,9 +22,9 @@ macro_rules! some_ok {
 
 #[macro_export]
 macro_rules! option_ok {
-    ($val: expr) => {
-        match $val {
-            Ok(val) => val,
+    ($value:expr) => {
+        match $value {
+            Ok(value) => value,
             Err(err) => return Some(Err(err.into())),
         }
     };
