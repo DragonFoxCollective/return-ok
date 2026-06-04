@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repo is archived because its source code is now being hosted on [our website](https://git.dragonfox.dev/DragonFoxCollective/return-ok)!
+
 # return-ok
 
 Macros for dealing with Options and Results where you shouldn't
